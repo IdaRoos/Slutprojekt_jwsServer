@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="842e0931-d353-4a86-b971-59d37d28f1de" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_jupiter.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServerJWS.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ServerTest.java" afterDir="false" />
+    <list default="true" id="842e0931-d353-4a86-b971-59d37d28f1de" name="Changes" comment="Finished project">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +54,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.ServerTest.testAddNewPerson">
+  <component name="RunManager">
     <configuration name="ServerTest.testAddNewPerson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ServerJWS" />
       <option name="PACKAGE_NAME" value="" />
@@ -101,12 +93,23 @@
       <workItem from="1678887877588" duration="2429000" />
       <workItem from="1678953551895" duration="2463000" />
       <workItem from="1679474563797" duration="86961000" />
-      <workItem from="1679988269323" duration="3625000" />
+      <workItem from="1679988269323" duration="5538000" />
     </task>
+    <task id="LOCAL−00001" summary="Finished project">
+      <created>1680162086141</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1680162086141</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Finished project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

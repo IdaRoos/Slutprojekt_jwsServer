@@ -1,4 +1,3 @@
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -6,7 +5,6 @@ import org.json.simple.parser.ParseException;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Arrays;
 
 public class Server {
     public static void main(String[] args) {
@@ -41,12 +39,12 @@ public class Server {
 
                     message = bufferedReader.readLine();
                     if (message == null) {
-                        break; // break the loop if message is null
+                        break; // Bryt loopen om message variabeln är null
                     }
 
                     // Hämta klientens meddelande och skicka den till openUpData() metoden
                     String returnData = openUpData(message);
-                    System.out.println(message);
+
 
                     //Skicka acknowledgement svar tillbaka till klienten
                     bufferedWriter.write(returnData);
@@ -70,22 +68,21 @@ public class Server {
 
     static String openUpData(String message) throws IOException, ParseException {
 
-        // Steg 1. Bygg upp JSON Object baserat på inkommande string
+        // Bygg upp JSON Object baserat på inkommande string
         JSONParser parser = new JSONParser();
         JSONObject jsonOb = (JSONObject) parser.parse(message);
-        System.out.println("jsonOb" + jsonOb);
 
-        // Steg 2. läs av URL och HTTP metod för att veta vad klienten vill
+        // Läs av URL och HTTP metod för att veta vad klienten vill
         // Hämta värdet av httpUrl
         String url = jsonOb.get("httpURL").toString();
         // Hämta värdet av httpMethod
         String method = jsonOb.get("httpMethod").toString();
 
-        //Steg 2.5 Dela upp URL med .split metod, där det finns en slash vill vi dela upp url:en i mindre delar
+        //Dela upp URL med .split metod
         String[] urls = url.split("/");
 
 
-        // Steg 3.Använd en SwitchCase för att kolla vilken data som ska användas
+        // Använd en SwitchCase för att kolla vilken data som ska användas
         switch (urls[0]) {
             case "persons": {
                 if (method.equalsIgnoreCase("get")) {
@@ -96,11 +93,9 @@ public class Server {
                     String data = parser.parse(new FileReader("data/data.json")).toString();
                     if (urls.length > 1) {
                         String id = urls[1];
-                        System.out.println("Requested ID: " + id);
+
                         JSONObject jsonData = (JSONObject) parser.parse(data);
-                        System.out.println("jsonData: " + jsonData);
                         JSONObject personData = (JSONObject) jsonData.get("p" + id);
-                        System.out.println("personData: " + personData);
 
                         if (personData != null) {
                             // Returnera data för en specifik person
@@ -122,7 +117,7 @@ public class Server {
 
                         // Hämta data från JSON fil
                         jsonReturn.put("data", parser.parse(new FileReader("data/data.json")).toString());
-                        // Konverterar jsonObjekt till strängvärde med hjälp av "toJSONString()"
+
 
                         // Inkluderat HTTP status code
                         jsonReturn.put("httpStatusCode", 200);
@@ -143,20 +138,20 @@ public class Server {
                     String favoriteColor = personData != null && personData.get("favoriteColor") != null ? personData.get("favoriteColor").toString() : "";
 
 
-                    // Create a new person object with the new values
+                    // Skapa ny person objekt med de nya värdena
                     JSONObject newPerson = new JSONObject();
                     newPerson.put("id", id);
                     newPerson.put("name", name);
                     newPerson.put("age", age);
                     newPerson.put("favoriteColor", favoriteColor);
-                    System.out.println(newPerson);
+
 
                     try (FileReader fileReader = new FileReader("data/data.json")) {
                         // Read the JSON file into a JSON object
                         JSONParser jsonParser = new JSONParser();
                         JSONObject jsonFile = (JSONObject) jsonParser.parse(fileReader);
 
-                        // Add the new person object to the jsonFile
+                        // Lägg till ny person till json filen
                         String newPersonKey = "p" + (jsonFile.size() + 1);
                         jsonFile.put(newPersonKey, newPerson);
 
@@ -166,11 +161,11 @@ public class Server {
                             fileWriter.flush();
                         }
 
-                        // Create the JSONReturn object
+                        // Skapa JSONReturn object
                         JSONObject jsonReturn = new JSONObject();
                         jsonReturn.put("httpStatusCode", 200);
 
-                        // Return the JSON string
+                        // Returnera JSON strängen
                         return jsonReturn.toJSONString();
                     }
                 }

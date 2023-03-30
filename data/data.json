@@ -1,1 +1,32 @@
-{"p1":{"name":"Ida","id":1,"favoriteColor":"Green","age":27},"p2":{"name":"Vasil","id":2,"favoriteColor":"Blue","age":34},"p3":{"name":"Minja","id":3,"favoriteColor":"Pink","age":26},"p4":{"name":"Sarah","id":4,"favoriteColor":"red","age":26},"p5":{"name":"Bob","id":5,"favoriteColor":"orange","age":65},"p6":{"name":"Test Person","id":12345,"favoriteColor":"blue","age":30},"p7":{"name":"Test Person","id":12345,"favoriteColor":"blue","age":30}}
+{
+  "p1": {
+    "name": "Ida",
+    "id": 1,
+    "favoriteColor": "Green",
+    "age": 27
+  },
+  "p2": {
+    "name": "Vasil",
+    "id": 2,
+    "favoriteColor": "Blue",
+    "age": 34
+  },
+  "p3": {
+    "name": "Minja",
+    "id": 3,
+    "favoriteColor": "Pink",
+    "age": 26
+  },
+  "p4": {
+    "name": "Sarah",
+    "id": 4,
+    "favoriteColor": "Red",
+    "age": 26
+  },
+  "p5": {
+    "name": "Bob",
+    "id": 5,
+    "favoriteColor": "Orange",
+    "age": 65
+  }
+}
